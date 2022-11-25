@@ -1,14 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'); */
-
-/* https://brittanychiang.com/
-https://bchiang7.github.io/v3/
-https://bchiang7.github.io/v2/ */
-/* font-family: 'IBM Plex Mono', monospace;
-font-family: 'Raleway', sans-serif; */
 
 :root {
   --background-darkblue:#101C26;
@@ -22,6 +13,7 @@ font-family: 'Raleway', sans-serif; */
 
   --soft-blue-shadow: rgba(180, 210, 217, 0.8);
   --blue-shadow: rgba(180, 210, 217, 0.3);
+  --darkblue-shadow: rgba(20, 26, 38, 0.8);
 
   --white: #FDFEFE;
   --black: #000000;
@@ -35,7 +27,6 @@ font-family: 'Raleway', sans-serif; */
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
   font-family: var(--principal-font);
   font-size: 62.5%;
@@ -51,10 +42,17 @@ body h2, h3 {
   margin: 0 auto;
 }
 /* Header */
+header {
+  position: fixed;
+	z-index: 1200;
+	top: 0;
+	width: 100%;
+  background-color: var(--darkblue-shadow);
+}
 /* Navbar */
 nav {
   padding: 35px;
-  box-shadow: 0 10px 20px -12px var(--soft-blue-shadow);
+
 }
 nav ul {
   float: right;
@@ -80,7 +78,7 @@ nav ul li a:hover {
   transform: rotate(45deg);
 }
 #nav:checked+.nav-open i {
-  background: #fff;
+  background: var(--soft-blue);
   transition: transform 0.2s ease;
 }
 #nav:checked+.nav-open i:nth-child(1) {
@@ -260,7 +258,6 @@ nav ul li a:hover {
 	height: 5px;
 	border: 1px solid rgba(0,0,0,0.3);
 	overflow: hidden;
-  /* box-shadow: 0 0 7px var(--light-blue); */
   box-shadow: 0 0 7px var(--blue-shadow);
 }
 .bar span {
@@ -467,21 +464,6 @@ footer .footer__content {
 /* /Footer */
 
 /* Responsive */
-@media (max-width: 768px) {
-  .navbar__nav {
-    display: none !important;
-  }
-  #nav-icon3 span {
-    display: block !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar__responsive {
-    transform: translate3d(-100%, 0, 0) !important;
-  }
-}
-
 @media (max-width: 480px) {
   .aboutme__content {
     /* display: grid; */
@@ -500,7 +482,7 @@ footer .footer__content {
     height: 100%;
     width: 100%;
     z-index: -1;
-    background: var(--dark-blue);
+    background: var(--background-blue);
     opacity: 0;
     transition: all 0.2s ease;
   }
@@ -556,7 +538,7 @@ footer .footer__content {
     display: block;
     width: 20px;
     height: 2px;
-    background: #2196f3;
+    background: var(--soft-blue);
     border-radius: 2px;
     margin-left: 14px;
   }
